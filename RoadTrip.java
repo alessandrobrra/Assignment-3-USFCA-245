@@ -11,9 +11,8 @@ public class RoadTrip {
     public List<City> cities;
     public List<Edge> edges;
     public List<City> answer;
-    Dijkstra dijkstraAlgorithm;
-    String[] nameOfCityArr;
-    Integer[] numberOfCityArr;
+    public Dijkstra dijkstraAlgorithm;
+    private String[] nameOfCityArr;
 
     /**
      * Function that  reads attractions
@@ -168,7 +167,7 @@ public class RoadTrip {
             nameOfCity.add(user);
         }
         nameOfCityArr = nameOfCity.toArray(new String[0]);
-        numberOfCityArr = numberOfCity.toArray(new Integer[0]);
+        Integer[] numberOfCityArr = numberOfCity.toArray(new Integer[0]);
         for (int i = 1; i < nameOfCityArr.length; i++) {
             int temp = numberOfCityArr[i];
             String temp2 = nameOfCityArr[i];
