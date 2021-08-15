@@ -2,7 +2,7 @@ import java.util.*;
 
 public class Dijkstra {
 
-    private final List<Edge> edges;
+    private List<Edge> edges;
     private Set<City> known;
     private Set<City> unknown;
     private Map<City, City> prior;
@@ -12,6 +12,10 @@ public class Dijkstra {
         this.edges = new ArrayList<Edge>(graph.getEdges());
     }
 
+    /**
+     * Function that starts the magic
+     * @param source of city currently looked at
+     */
     public void execute(City source) {
         known = new HashSet<City>();
         unknown = new HashSet<City>();
@@ -27,6 +31,11 @@ public class Dijkstra {
         }
     }
 
+    /**
+     * Function that get minimum distances of adjacent
+     * nodes/cities
+     * @param city currently looked at
+     */
     private void findMinimalDistances(City city) {
         List<City> adjacentNodes = getAdjacent(city);
         for (City target : adjacentNodes) {
